@@ -76,7 +76,7 @@ app.delete("/movies/:movieId", async (request, response) => {
   const { movieId } = request.params;
   const deleteMovie = `DELETE FROM movie WHERE 
    movie_id=?;`;
-  await db.run(deleteMovie, [movieId]);
+  await database.run(deleteMovie, [movieId]);
   response.send("Movie Removed");
 });
 
